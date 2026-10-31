@@ -1,0 +1,98 @@
+{% extends 'adminheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f6f9;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        padding: 30px;
+        margin-top: 40px;
+    }
+
+    .card-header h3 {
+        text-align: center;
+        color: #007bff;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+    th, td {
+        padding: 14px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f5fb;
+    }
+
+    @media (max-width: 768px) {
+        th, td {
+            font-size: 13px;
+            padding: 10px;
+        }
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3></h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="multi-filter-select" class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Complaint</th>
+                            <th>Current Date</th>
+                            <th>Reply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for std in hosp %}
+                        <tr>
+                            <td>{{ std.complaint }}</td>
+                            <td>{{ std.current_date }}</td>
+                            <td><a href="{% url 'reply' std.id %}" class="btn btn-edit">Reply</a></td>
+
+                            <td>{{ std.reply }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

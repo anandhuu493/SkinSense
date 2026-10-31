@@ -1,0 +1,544 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aesthetic Template">
+    <meta name="keywords" content="Aesthetic, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SkinSense</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'User/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'User/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__logo">
+            <a href="{% static 'User/index.html' %}">
+                <h2>SKIN SENSE</h2>
+            </a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__btn">
+            <a href="#" class="primary-btn">Appointment</a>
+        </div>
+        <ul class="offcanvas__widget">
+            <li><i class="fa fa-phone"></i> 8921740487</li>
+            <li><i class="fa fa-map-marker"></i> Palayam,Thiruvanthapuram , 695145</li>
+            <li><i class="fa fa-clock-o"></i> Mon to Sat 9:00am to 18:00pm</li>
+        </ul>
+        <div class="offcanvas__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <ul class="header__top__left">
+                            <li><i class="fa fa-phone"></i> 8921740487</li>
+                            <li><i class="fa fa-map-marker"></i> Palayam,Thiruvanthapuram 695145 </li>
+                            <li><i class="fa fa-clock-o"></i> Mon to Sat 9:00am to 18:00pm</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="header__top__right">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="{% url 'landing' %}"><img src="{% static 'User/img/logo1.png' %}" height="100" width="300" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="header__menu__option">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class=""><a href="{% url 'landing' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                              
+                                <li><a href="#">REGISTRATION</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'userregistration' %}">USER</a></li>
+                                        <li><a href="{% url 'doctorregistration' %}">DOCTOR</a></li>
+                                        <li><a href="{% url 'hospitalregistration' %}">HOSPITAL</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                        <div class="header__btn">
+                            <a href="{% url 'login' %}" class="primary-btn">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero spad set-bg" data-setbg="{% static 'User/img/bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero__text">
+                        <span></span>
+                        <h2>Skin Sense AI skin analysis tool</h2>
+                        <a href="#" class="primary-btn normal-btn">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Consultation Section Begin -->
+     <br>
+     <br>
+     <br>
+    <section class="consultation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="consultation__form">
+                        <div class="section-title">
+                            <h4>Start your experience with Skin Sense</h4><br>
+                            <span>Click below to analyze your skin</span>
+                            
+                        </div>
+                        <form action="#">
+                            <!-- <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Email">
+                            <div class="datepicker__item">
+                                <input type="text" placeholder="Date" class="datepicker">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <select>
+                                <option value="">Type of service</option>
+                                <option value="">AI-based skin analysis</option>
+                                <option value="">Personalised product recommendation system</option>
+                                <option value="">Doctor consultation portal</option>
+                                <option value="">Skincare routine tracker</option>
+                            </select> -->
+                            <button type="submit" class="site-btn">SKIN ANALYZER</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="consultation__text">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="consultation__text__item">
+                                    <div class="section-title">
+                                        <span>Welcome to SkinSense</span>
+                                        <h2>Find Best Doctors With <b>SkinSense</b></h2>
+                                    </div>
+                                    <p>Proper skincare begins with understanding your skin type—nourish it daily, protect it from damage, and when issues arise, treat the root cause, not just the symptoms, for lasting cure and glow.
+</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="consultation__video set-bg" data-setbg="{% static 'User/img/consultation-video.jpg' %}">
+                                    <a href="/https://www.youtube.com/watch?v=PXsuI67s2AA" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Consultation Section End -->
+
+    <!-- Chooseus Section Begin -->
+    <section class="chooseus spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                       <span>Why choose us?</span>
+                        <h2>Personalized skin analysis in 4 steps</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="chooseus__item">
+                        <img src="{% static 'User/img/icons/ci-1.png' %}" alt="">
+                        <h5>Step 1</h5>
+                        <h4>Open the Skin Sense AI Skin analysis tool on the website</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="chooseus__item">
+                        <img src="{% static 'User/img/icons/ci-2.png' %}" alt="">
+                        <h5>Step 2</h5>
+                        <h4>Upload the photo.</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="chooseus__item">
+                        <img src="{% static 'User/img/icons/ci-3.png' %}" alt="">
+                        <h5>Step 3</h5>
+                        <h4>Skin Sense will scan your skin and analyze it.</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="chooseus__item">
+                        <img src="{% static 'User/img/icons/ci-4.png' %}" alt="">
+                        <h5>Step 4</h5>
+                        <h4>Recieve your personalized skin analysis report and skincare recommendations.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Chooseus Section End -->
+
+    <!-- Services Section Begin -->
+    <section class="services spad set-bg" data-setbg="{% static 'User/img/services-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-6">
+                    <div class="section-title">
+                        <span>Our services</span>
+                        <h2>Offer for you</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="services__btn">
+                        <a href="#" class="primary-btn">Contact us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-7">
+                    <div class="services__item">
+                        <div class=>
+                            <span class=></span>
+                        </div>
+                        <div class="services__item__text">
+                            <h5>AI-based skin analysis</h5>
+                            <p>AI-based skin analysis uses advanced algorithms to scan, detect, and diagnose skin conditions with precision, enabling faster, personalized, and data-driven skincare solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="services__item">
+                        <div class=>
+                            <span class=></span>
+                        </div>
+                        <div class="services__item__text">
+                            <h5>Personalised product recommendation system</h5>
+                            <p>A personalized skin product recommendation system harnesses AI to analyze individual skin types, concerns, and goals, delivering hyper-targeted solutions for optimal skin health and results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="services__item">
+                        <div class=>
+                            <span class=></span>
+                        </div>
+                        <div class="services__item__text">
+                            <h5>Doctor consultation portal</h5>
+                            <p>A doctor consultation portal provides seamless access to licensed medical professionals, allowing users to receive expert advice, prescriptions, and care remotely anytime, anywhere.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="services__item">
+                        <div class=>
+                            <span class=></span>
+                        </div>
+                        <div class="services__item__text">
+                            <h5>Skin routine tracker</h5>
+                            <p>skincare routine tracker helps users monitor, optimize, and stay consistent with their daily regimen, ensuring long-term skin health through personalized insights and habit building.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Team Section Begin -->
+    <section class="team spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <span>Our Team</span>
+                        <h2>Our Expert Doctors</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="team__item">
+                        <img src="{% static 'User/img/team/team-1.jpg' %}" alt="">
+                        <h5>Dr. Nithya</h5>
+                        <span>Plastic surgeon</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="team__item">
+                        <img src="{% static 'User/img/team/team-2.jpg' %}" alt="">
+                        <h5>Dr. Arun</h5>
+                        <span>Plastic surgeon</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="team__item">
+                        <img src="{% static 'User/img/team/team-3.jpg' %}" alt="">
+                        <h5>Dr. Sarah Johns</h5>
+                        <span>Plastic surgeon</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Gallery Begin -->
+    <!-- <div class="gallery">
+        <div class="gallery__container">
+            <div class="grid-sizer"></div>
+            <div class="gc__item set-bg" data-setbg="{% static 'User/img/gallery/gallery-1.jpg' %}">
+                <a href="{% static 'User/img/gallery/gallery-1.jpg' %}" class="image-popup"><i class="fa fa-search-plus"></i></a>
+            </div>
+            <div class="gc__item set-bg" data-setbg="{% static 'landing/img/gallery/gallery-2.jpg' %}">
+                <a href="{% static 'User/img/gallery/gallery-2.jpg' %}" class="image-popup"><i class="fa fa-search-plus"></i></a>
+            </div>
+            <div class="gc__item set-bg" data-setbg="{% static 'User/img/gallery/gallery-2.avif' %}">
+                <a href="{% static 'User/img/gallery/gallery-2.avif' %}" class="image-popup"></i></a>
+            </div>
+            <div class="gc__item gc__item__large set-bg" data-setbg="">
+                <a href=""class=""><i class="fa fa-search-plus"></i></a>
+            </div>
+            <div class="gc__item set-bg" data-setbg="{% static 'User/img/gallery/gallery-5.jpg' %}">
+                <a href="{% static 'User/img/gallery/gallery-5.jpg' %}" class="image-popup"><i class="fa fa-search-plus"></i></a>
+            </div>
+            <div class="gc__item set-bg" data-setbg="">
+                <a href="" class=""><i class="fa fa-search-plus"></i></a>
+            </div>
+            <div class="gc__item set-bg" data-setbg="{% static 'User/img/gallery/gallery-7.jpg' %}">
+                <a href="{% static 'User/img/gallery/gallery-7.jpg' %}" class="image-popup"><i class="fa fa-search-plus"></i></a>
+            </div>
+        </div>
+    </div> -->
+    <!-- Gallery End -->
+
+    <!-- Latest News Begin -->
+    <section class="latest spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-6">
+                    <div class="section-title">
+                        <span>Our News</span>
+                        <h2>Skin care tips</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="latest__btn">
+                        <a href="#" class="primary-btn">View all news</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="latest__item">
+                        <h5><a href="#">Here’s how you can get a natural glow this party season</a></h5>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <ul>
+                            <li><img src="{% static 'User/img/blog/blog-author.jpg' %}" alt=""> John Doe</li>
+                            <li>Dec 06, 2019</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="latest__item">
+                        <h5><a href="#">Get better skin with these top 10 tips for skin care</a></h5>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <ul>
+                            <li><img src="{% static 'User/img/blog/blog-author.jpg' %}" alt=""> John Doe</li>
+                            <li>Dec 06, 2019</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="latest__item">
+                        <h5><a href="#">8 Ways to Save Your Skin if You Exercise Outside This Winter</a></h5>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <ul>
+                            <li><img src="{% static 'User/img/blog/blog-author.jpg' %}" alt=""> John Doe</li>
+                            <li>Dec 06, 2019</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest News End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="footer__logo">
+                            <a href="#"><img src="{% static 'User/img/logo1.png' %}" height="100" width="200"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8">
+                        <div class="footer__newslatter">
+                            <!-- <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit" class="site-btn">Subscribe</button>
+                            </form> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Departments</a></li>
+                            <li><a href="#">Find a Doctor</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__address">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i> Palayam ,Thiruvanthapuram ,695145</li>
+                            <li><i class="fa fa-phone"></i> 8921740487</li>
+                            <li><i class="fa fa-envelope"></i> skinsense@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-6">
+                    <div class="footer__map">
+                        <iframe
+                        src="/https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd"
+                        height="190" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div class="footer__copyright__text">
+                            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="" aria-hidden=""></i> <a href="" target=""></a></p>
+                        </div>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                    <div class="col-lg-5">
+                        <ul>
+                            <li>All Rights Reserved</li>
+                            <li>Terms & Use</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'User/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'User/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'User/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'User/js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'User/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'User/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'User/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'User/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'User/js/main.js' %}"></script>
+</body>
+
+</html>

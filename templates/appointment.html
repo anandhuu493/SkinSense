@@ -1,0 +1,64 @@
+{% extends 'usersubheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to right, #e0f7fa, #fce4ec);
+        margin: 0;
+        padding: 0;
+    }
+
+    .appointment-container {
+        max-width: 500px;
+        margin: 3rem auto;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    button {
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #004d40;
+    }
+</style>
+
+<div class="appointment-container">
+    <h2></h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form1.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'usersubheader.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="{% url 'userdoclist' %}">
+        <input type="text" name="q" placeholder="Search users..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Qualification</th>
+            <th>Experience</th>
+            <th>Contact</th>
+            <th>Action</th>
+        </tr>
+        {% for std in doc %}
+        <tr>
+            <td>{{ std.name }}</td>
+            <td>{{ std.gender }}</td>
+            <td>{{ std.dob }}</td>
+            <td>{{ std.qualifications }}</td>
+            <td>{{ std.experience }}</td>
+            <td>{{ std.contact }}</td>
+        {% if std.Appointment_status == 0 %}
+    <td><a href="{% url 'appointment' std.id %}">Take Appointment</a></td>
+{% else %}
+    <td><span style="color: gray;">Appointment confirmed</span></td>
+{% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}

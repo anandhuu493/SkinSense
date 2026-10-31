@@ -1,0 +1,91 @@
+{% extends 'usersubheader.html' %}
+{% block content %}
+<style>
+    .card {
+        margin: 2rem auto;
+        max-width: 95%;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header h3 {
+        margin: 0;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .table thead th {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+    }
+
+    .table td, .table th {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    a.btn-action {
+        padding: 6px 12px;
+        border-radius: 6px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    a.btn-edit {
+        background-color: #28a745;
+    }
+
+    a.btn-edit:hover {
+        background-color: #218838;
+    }
+
+    a.btn-delete {
+        background-color: #dc3545;
+    }
+
+    a.btn-delete:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center"></h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="multi-filter-select" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Current Date</th>
+                            <th>Prescription</th>
+                            <th colspan="2">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for std in hosp %}
+                        <tr>
+                            <td>{{ std.date }}</td>
+                            <td>{{ std.time }}</td>
+                            <td>{{ std.current_date }}</td>
+                            <td>{{ std.prescription }}</td>
+                            <td>
+                                <a href="{% url 'appointment_edit' std.id %}" class="btn-action btn-edit">Edit</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'appointment_delete' std.id %}" class="btn-action btn-delete">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

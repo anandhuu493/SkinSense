@@ -1,0 +1,93 @@
+{% extends 'adminheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        margin-top: 40px;
+        padding: 30px;
+    }
+
+    .card-header h3 {
+        text-align: center;
+        color: #007bff;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+    th, td {
+        padding: 14px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    tr:hover {
+        background-color: #eef2f7;
+    }
+
+    @media (max-width: 768px) {
+        th, td {
+            font-size: 13px;
+            padding: 10px;
+        }
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3></h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="multi-filter-select" class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for std in doc %}
+                        <tr>
+                            <td>{{ std.name }}</td>
+                            <td>{{ std.contact }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

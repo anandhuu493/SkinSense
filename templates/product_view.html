@@ -1,0 +1,131 @@
+{% extends 'adminheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        padding: 30px;
+        margin-top: 40px;
+    }
+
+    .card-header {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .card-body {
+        padding-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 12px;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        font-size: 15px;
+        vertical-align: middle;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    img {
+        border-radius: 8px;
+        max-height: 80px;
+        object-fit: cover;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    a[href*='edit'] {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    a[href*='edit']:hover {
+        background-color: #218838;
+    }
+
+    a[href*='delete'] {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    a[href*='delete']:hover {
+        background-color: #c82333;
+    }
+
+    @media (max-width: 768px) {
+        th, td {
+            font-size: 13px;
+            padding: 8px;
+        }
+
+        img {
+            max-width: 60px;
+        }
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 style="text-align:center; color:#007bff;"></h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="multi-filter-select" class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for std in hosp %}
+                        <tr>
+                            <td>{{ std.name }}</td>
+                            <td>{{ std.description }}</td>
+                            <td><img src="{{ std.image.url }}" width="100"></td>
+                            <td><a href="{% url 'product_edit' std.id %}">Edit</a></td>
+                            <td><a href="{% url 'product_delete' std.id %}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

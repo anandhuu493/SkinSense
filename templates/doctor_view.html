@@ -1,0 +1,84 @@
+{% extends 'doctorsubheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f9faff;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        background-color: #0077cc;
+        color: white;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+    }
+
+    tr:hover {
+        background-color: #f1f7ff;
+    }
+
+    /* a {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    } */
+
+    /* a:hover {
+        background-color: #218838;
+    } */
+
+    .table-title {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+
+<div class="table-title"></div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>User Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Current Date</th>
+        <th colspan="2">Option</th>
+    </tr>
+    {% for std in hosp %}
+    <tr>
+        <td>{{ std.user_id.name }}</td>
+        <td>{{ std.date }}</td>
+        <td>{{ std.time }}</td>
+        <td>{{ std.current_date }}</td>
+              {% if std.Appointment_status == 0 %}
+        <td><a href="{% url 'prescription' std.id %}">Prescriptions</a></td>
+{% else %}
+    <td><span style="color: gray;">Already added</span></td>
+{% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital_List</title>
+</head>
+<body>
+    <h1>Hospital_list</h1>
+    <table border="1">
+        <tr>
+            <th>Hospital_name</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>District</th>
+            <th>City</th>
+            
+
+            <th colspan="2">option</th>
+
+        </tr>
+        {% for std in hosp %}
+        <tr>
+            <td>{{ std.Hospital_name }}</td>
+            <td>{{ std.Address }}</td>
+            <td>{{ std.State }}</td>
+            <td>{{ std.District }}</td>
+            <td>{{ std.City }}</td>
+        
+            <td><a href="">approve</a></td>
+            <td><a href="">reject</a></td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>

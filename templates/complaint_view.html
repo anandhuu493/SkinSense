@@ -1,0 +1,97 @@
+{% extends 'usersubheader.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f0f8ff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .complaint-container {
+        max-width: 90%;
+        margin: 3rem auto;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #007bff;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px 16px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    a.btn {
+        padding: 6px 14px;
+        border-radius: 6px;
+        color: white;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: background-color 0.3s ease;
+    }
+
+    a.btn-edit {
+        background-color: #28a745;
+    }
+
+    a.btn-edit:hover {
+        background-color: #218838;
+    }
+
+    a.btn-delete {
+        background-color: #dc3545;
+    }
+
+    a.btn-delete:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<div class="complaint-container">
+    <h1></h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Complaint</th>
+                <th>Current Date</th>
+                <th>Reply</th>
+                <th colspan="2">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for std in hosp %}
+            <tr>
+                <td>{{ std.complaint }}</td>
+                <td>{{ std.current_date }}</td>
+                <td>{{ std.reply }}</td>
+                <td><a href="{% url 'complaint_edit' std.id %}" class="btn btn-edit">Edit</a></td>
+                <td><a href="{% url 'complaint_delete' std.id %}" class="btn btn-delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

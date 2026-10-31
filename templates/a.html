@@ -1,0 +1,40 @@
+{% extends 'usersubheader' %}
+{% block content %}
+<html>
+<body>
+    <h2>Company Staff Directory</h2>
+    <form method="get">
+        <input type="text"name="q" placeholder="Search staff..." value="{{query}}">
+        <input type="submit" value="Search">
+    </form>
+    <table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Current Date</th>
+            <th>Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for std in search %}
+        <tr>
+            <td>{{ std.name }}</td>
+            <td>{{ std.description }}</td>
+            <td>
+                {% if std.image %}
+                    <img src="{{ std.image.url }}" alt="{{ std.name }}">
+                {% else %}
+                    No image
+                {% endif %}
+            </td>
+            <td>{{ std.current_date|date:"M d, Y" }}</td>
+            <td><a href="{% url 'payment' std.id %}">Buy</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

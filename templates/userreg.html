@@ -1,0 +1,82 @@
+{% extends 'landingsubheader.html' %}
+{% block content %}
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+    .form-container h2 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    .form-container form p {
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #555;
+    }
+
+    .form-container input, 
+    .form-container select, 
+    .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: 0.3s border-color;
+    }
+
+    .form-container input:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="form-container">
+    <!-- <h2>Registration Form</h2> -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ forms.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
